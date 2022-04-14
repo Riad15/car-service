@@ -1,0 +1,44 @@
+[
+    {
+        "id": 101,
+        "name": " Car wash ",
+        "price": "150tk",
+        "description": "your car is washing carefully and we provide best service",
+        "pic": "https://i.ibb.co/85YXtHW/car-wash.jpg"
+    },
+    {
+        "id": 102,
+        "name": " engine oil ",
+        "price": "1009tk",
+        "description": "your car is washing carefully and we provide best service",
+        "pic": "https://i.ibb.co/mTcrsD7/ingine-oil-1.jpg"
+    },
+    {
+        "id": 103,
+        "name": " Car repairer ",
+        "price": "1020tk",
+        "description": "your car is washing carefully and we provide best service",
+        "pic": "https://i.ibb.co/9YwT2NK/repair-car-service.jpg"
+    },
+    {
+        "id": 104,
+        "name": " Car tire ",
+        "price": "500tk",
+        "description": "your car is washing carefully and we provide best service",
+        "pic": "https://i.ibb.co/kSFJzh8/showing-thumb-up.jpg"
+    },
+    {
+        "id": 105,
+        "name": " Car wash ",
+        "price": "1000tk",
+        "description": "your car is washing carefully and we provide best service",
+        "pic": "https://i.ibb.co/85YXtHW/car-wash.jpg"
+    },
+    {
+        "id": 106,
+        "name": " Car wash ",
+        "price": "100tk",
+        "description": "your car is washing carefully and we provide best service",
+        "pic": "https://i.ibb.co/kSFJzh8/showing-thumb-up.jpg"
+    }
+]

@@ -1,0 +1,23 @@
+.title {
+    text-align: center;
+    font-size: 46px;
+    font-weight: 500;
+    color: coral;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media only screen and (max-width:480px) {
+    .service-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (min-device-width: 481px) and (max-device-width: 768px) {
+    .service-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
