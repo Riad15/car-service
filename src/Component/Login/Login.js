@@ -1,17 +1,31 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
 import googleLogo from '../../Picture/google-logo.png'
 
 const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const navigate = useNavigate();
+    const [signInWithEmailAndPassword, user, loading] = useSignInWithEmailAndPassword(auth)
+    if (loading) {
+        return <p style={{ fontSize: '35px', color: 'blue', textAlign: 'center' }}>Loading...</p>;
+    }
     const formSubmit = (event) => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        console.log(email, password);
+        if (user) {
+            window.alert('your email or password is incorrect')
+        } else {
+            signInWithEmailAndPassword(email, password);
+        }
+
         event.preventDefault();
+    }
+    if (user) {
+        navigate('/home')
     }
     const navigatRegister = (event) => {
         navigate('/register')
