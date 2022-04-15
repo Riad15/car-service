@@ -3,7 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
-import googleLogo from '../../Picture/google-logo.png'
+import GoogleSignIn from './GoogleSignIn/GoogleSignIn';
 
 const Login = () => {
     const emailRef = useRef('');
@@ -54,10 +54,12 @@ const Login = () => {
             </Form>
             <p>New Member ?<a onClick={navigatRegister} href='/'>register</a> </p>
             <br />
-            <div style={{ cursor: 'pointer' }} className='flex d-flex border border-primary justify-content-center align-items-center '>
-                <img style={{ width: '35px' }} src={googleLogo} alt="" />
-                <small>login with google</small>
+            <div className='d-flex align-items-center'>
+                <div style={{ height: '1px' }} className="bg-primary w-50"></div>
+                <p className='mt-3 p-2'>or</p>
+                <div style={{ height: '1px' }} className="bg-primary w-50"></div>
             </div>
+            <GoogleSignIn></GoogleSignIn>
         </div>
     );
 };
