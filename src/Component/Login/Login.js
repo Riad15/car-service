@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import GoogleSignIn from './GoogleSignIn/GoogleSignIn';
@@ -10,6 +10,7 @@ const Login = () => {
     const passwordRef = useRef('');
     const navigate = useNavigate();
     const [signInWithEmailAndPassword, user, loading] = useSignInWithEmailAndPassword(auth)
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
     if (loading) {
         return <p style={{ fontSize: '35px', color: 'blue', textAlign: 'center' }}>Loading...</p>;
     }
@@ -31,6 +32,13 @@ const Login = () => {
         navigate('/register')
         event.preventDefault();
     }
+    const handelResetPassWord = async () => {
+        const email = emailRef.current.value;
+        await sendPasswordResetEmail(email);
+        alert('Sent email');
+        window.alert('send email');
+
+    }
 
     return (
         <div className='w-50 mx-auto border border-2 rounded border-primary m-5 p-2'>
@@ -48,10 +56,12 @@ const Login = () => {
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button variant="primary w-100 mx-auto d-block" type="submit">
                     Submit
                 </Button>
             </Form>
+            <p>forget Password ?<a onClick={handelResetPassWord} href=''>Reset passWord</a> </p>
+            <br />
             <p>New Member ?<a onClick={navigatRegister} href='/'>register</a> </p>
             <br />
             <div className='d-flex align-items-center'>

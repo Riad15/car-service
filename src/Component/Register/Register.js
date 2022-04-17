@@ -4,6 +4,7 @@ import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import GoogleSignIn from '../Login/GoogleSignIn/GoogleSignIn';
 
 const Register = () => {
     const nameRef = useRef('');
@@ -73,16 +74,18 @@ const Register = () => {
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button variant="primary w-100 mx-auto d-block" type="submit">
                     Submit
                 </Button>
             </Form>
             <p>You have an account ?<a onClick={navigatLogin} href='/'>Login</a> </p>
             <br />
-            <div style={{ cursor: 'pointer' }} className='flex d-flex border border-primary justify-content-center align-items-center '>
-                <img style={{ width: '35px' }} src={googleLogo} alt="" />
-                <small>login with google</small>
+            <div className='d-flex align-items-center'>
+                <div style={{ height: '1px' }} className="bg-primary w-50"></div>
+                <p className='mt-3 p-2'>or</p>
+                <div style={{ height: '1px' }} className="bg-primary w-50"></div>
             </div>
+            <GoogleSignIn></GoogleSignIn>
         </div>
     );
 };
