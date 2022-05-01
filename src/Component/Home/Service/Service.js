@@ -5,7 +5,7 @@ import './Service.css'
 const Service = () => {
     const [dataSet, setData] = useState([]);
     useEffect(() => {
-        fetch('carService.json')
+        fetch('http://localhost:5000/service')
             .then(res => res.json())
             .then(data => setData(data))
     }, [])
@@ -16,7 +16,7 @@ const Service = () => {
                 <div className='row'>
                     {
                         dataSet.map(data => <Work
-                            key={data.id}
+                            key={data._id}
                             data={data}
                         ></Work>)
                     }

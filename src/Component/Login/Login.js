@@ -57,7 +57,7 @@ const Login = () => {
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
                 <Button variant="primary w-100 mx-auto d-block" type="submit">
-                    Submit
+                    Login
                 </Button>
             </Form>
             <p>forget Password ?<a onClick={handelResetPassWord} href=''>Reset passWord</a> </p>

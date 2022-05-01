@@ -75,7 +75,7 @@ const Register = () => {
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
                 <Button variant="primary w-100 mx-auto d-block" type="submit">
-                    Submit
+                    register
                 </Button>
             </Form>
             <p>You have an account ?<a onClick={navigatLogin} href='/'>Login</a> </p>

@@ -9,6 +9,8 @@ import Login from './Component/Login/Login';
 import Register from './Component/Register/Register';
 import RequiareAuth from './Component/Login/RequiareAuth/RequiareAuth';
 import CheckOut from './Component/CheckOut/CheckOut';
+import AddService from './Component/AddService/AddService';
+import Mange from './Component/Manage/Mange';
 
 function App() {
   return (
@@ -27,6 +29,18 @@ function App() {
             <CheckOut></CheckOut>
           </RequiareAuth>
         }></Route>
+
+        <Route path='/addservice' element={
+          <RequiareAuth>
+            <AddService></AddService>
+          </RequiareAuth>
+        }></Route>
+        <Route path='/manage' element={
+          <RequiareAuth>
+            <Mange></Mange>
+          </RequiareAuth>
+        }></Route>
+
       </Routes>
     </div>
   );
